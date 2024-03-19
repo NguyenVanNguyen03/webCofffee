@@ -1,4 +1,4 @@
-import backgroundImage from "../assets/images/bgr_cf.png"; // Import ảnh nền
+import backgroundImage from "../../assets/images/bgr_cf.png"; // Import ảnh nền
 import "./Footer.scss";
 
 const Footer = () => {

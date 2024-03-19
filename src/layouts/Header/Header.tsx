@@ -1,7 +1,7 @@
-import { FaCartPlus } from "react-icons/fa";
-import { CiSearch } from "react-icons/ci";
 import "./Header.scss";
-import logo from "./logo_coffee.svg";
+import logo from "../logo_coffee.svg";
+import { CiSearch } from "react-icons/ci";
+import { FaCartPlus } from "react-icons/fa";
 
 function Header() {
   return (
@@ -18,7 +18,7 @@ function Header() {
         <input type="text" placeholder="Cappuccino" />
       </div>
 
-      <FaCartPlus />
+      <FaCartPlus className="bt-card" />
     </div>
   );
 }

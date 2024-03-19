@@ -1,4 +1,4 @@
-import OptionService from "../components/option_service/option_service";
+import OptionService from "../../components/option_service/option_service";
 import "./option_servicePage.scss";
 export default function OptionServicePage() {
   return (

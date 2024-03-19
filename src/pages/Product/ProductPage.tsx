@@ -1,4 +1,4 @@
-import ProductCard from "../components/ProductCard/ProductCard";
+import ProductCard from "../../components/ProductCard/ProductCard";
 import "./ProductPage.scss";
 export default function ProductPage() {
   return (

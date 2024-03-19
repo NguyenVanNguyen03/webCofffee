@@ -1,7 +1,8 @@
 import "./HomePage.scss";
-import cofe1 from "../assets/images/cofe1.png";
+import cofe1 from "../../assets/images/cofe1.png";
 import { FaShoppingCart } from "react-icons/fa";
-import CoffeeCard from "../components/Card/card";
+import CoffeeCard from "../../components/Card/card";
+
 function HomePage() {
   return (
     <div className="Container">

@@ -1,4 +1,4 @@
-import imgAbout from "../assets/images/cofe_About.png";
+import imgAbout from "../../assets/images/cofe_About.png";
 import "./AboutPage.scss";
 
 export default function AboutPage() {
