@@ -1,19 +1,18 @@
-.cards-container {
+.cardsProduct-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
-  border: 1px solid #ccc;
   background-color: #fff;
   border-radius: 5px;
   overflow: hidden;
-  width: 350px;
+  width: calc(33.33% - 150px); /* Xác định kích thước của mỗi card */
+  margin: 0 30px 20px 30px; /* Thay đổi margin bottom để tạo khoảng cách giữa các dòng */
   padding: 20px;
-  box-shadow: 0 0 0 5px rgb(255, 255, 255, 0.3),
-    /* Border bên ngoài */ 0 8px 22px rgba(255, 255, 255, 0.4); /* Bóng nội */
   border: none;
-  margin: 0 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .card-header {
@@ -66,24 +65,25 @@
   margin: 0;
 }
 
-.button-group {
+.content-and-button {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Để nội dung và nút cart căn trên cùng */
 }
-.button-group button {
+
+.button-group-product {
+  display: flex;
+  align-items: center; /* Để nút cart căn giữa theo chiều dọc */
+}
+
+.button-group-product button {
   margin-right: 10px;
   border: 1px solid #ffb546;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 50%;
   color: #ffb546;
   padding: 5px 10px;
   cursor: pointer;
-}
-
-.button-group button.hot-button:hover,
-.button-group button.cold-button:hover {
-  border-color: #ff7b00;
-  background-color: #fee7c5;
-  color: #ff7b00;
 }
 
 .cart-button {
@@ -91,7 +91,7 @@
   border: none;
   background-color: #ff8000 !important;
   color: white !important;
-  border-radius: 50% !important;
+  border-radius: 50%;
   width: 35px;
   height: 35px;
   display: flex;

@@ -6,7 +6,9 @@
   justify-content: space-between;
   padding: 20px 120px;
   border-bottom: 1px solid black;
-
+  .coffee-logo {
+    cursor: pointer;
+  }
   ul {
     flex: 1;
     list-style: none;
@@ -41,5 +43,11 @@
     padding-left: 30px;
     border-radius: 50px;
     border: none;
+  }
+  // .bt-card {
+  //   cursor: pointer;
+  // }
+  svg {
+    cursor: pointer;
   }
 }

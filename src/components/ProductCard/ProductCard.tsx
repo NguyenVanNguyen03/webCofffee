@@ -1,10 +1,10 @@
-import "./card.scss";
+import "./ProductCard.scss";
 import { FaShoppingCart, FaStar } from "react-icons/fa";
-import Data_Card from "./Data_Card";
+import Data_Card from "./Data_product";
 
-const CoffeeCard = () => {
+const ProductCard = () => {
   return (
-    <div className="cards-container">
+    <div className="cardsProduct-container">
       {Data_Card.map((item) => (
         <div className="card" key={item.id}>
           <div className="card-header">
@@ -23,12 +23,13 @@ const CoffeeCard = () => {
               <h3 className="coffee-name">{item.NameProduct}</h3>
               <p className="coffee-price">{item.Price}K</p>
             </div>
-            <div className="button-group">
-              <button className="hot-button">Hot</button>
-              <button className="cold-button">Cold</button>
-              <button className="cart-button">
-                <FaShoppingCart />
-              </button>
+            <div className="content-and-button">
+              <p>{item.contentProduct}</p>
+              <div className="button-group-product">
+                <button className="cart-button">
+                  <FaShoppingCart />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -37,4 +38,4 @@ const CoffeeCard = () => {
   );
 };
 
-export default CoffeeCard;
+export default ProductCard;
