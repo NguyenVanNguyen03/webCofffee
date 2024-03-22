@@ -7,6 +7,8 @@
   padding: 20px 120px;
   border-bottom: 1px solid black;
   height: var(--header-height);
+  background: url(../../assets/images/bgr_cf_aboutt.png);
+  z-index: 9999;
   .coffee-logo {
     cursor: pointer;
   }
@@ -14,18 +16,25 @@
     flex: 1;
     list-style: none;
     text-align: center;
-
-    li {
-      display: inline-block;
-      margin: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-
-      &:hover {
-        color: orange;
-      }
-    }
+    list-style-type: none;
   }
+
+  li {
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  li a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  li:hover {
+    color: orange;
+  }
+
   .search-box {
     position: relative;
     margin-right: 40px;

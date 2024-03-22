@@ -2,15 +2,25 @@ import "./Header.scss";
 import logo from "../logo_coffee.svg";
 import { CiSearch } from "react-icons/ci";
 import { FaCartPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="navbar">
-      <img src={logo} alt="Coffee Logo" className="coffee-logo" />
+      <Link to="/">
+        <img src={logo} alt="Coffee Logo" className="coffee-logo" />
+      </Link>
+
       <ul>
-        <li>About us</li>
-        <li>Our Product</li>
-        <li>Delivery</li>
+        <li>
+          <Link to="/about">About us</Link>
+        </li>
+        <li>
+          <Link to="/products">Our Product</Link>
+        </li>
+        <li>
+          <Link to="/service">Delivery</Link>
+        </li>
       </ul>
 
       <div className="search-box">
@@ -18,7 +28,9 @@ function Header() {
         <input type="text" placeholder="Cappuccino" />
       </div>
 
-      <FaCartPlus className="bt-card" />
+      <Link to="/cart">
+        <FaCartPlus className="bt-card" />
+      </Link>
     </div>
   );
 }

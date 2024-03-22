@@ -1,9 +1,12 @@
 import express from "express";
+import cors from "cors";
 import bodyParser from "body-parser";
 import connectDB from "./db/database.js";
 import router from "./routes/controller.js";
 
 const app = express();
+
+app.use(cors());
 
 // Sử dụng bodyParser để xử lý dữ liệu từ phần thân yêu cầu HTTP
 app.use(bodyParser.urlencoded({ extended: true }));

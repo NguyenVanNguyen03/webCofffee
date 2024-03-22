@@ -17,7 +17,10 @@
           <tr>
             <th>Product id</th>
             <th>Product name</th>
-            <th>Product type</th>
+            <th>Product content</th>
+            <th>Img</th>
+            <th>Product price</th>
+            <th>Product rating</th>
             <th>Edit</th>
           </tr>
         </thead>
@@ -25,7 +28,16 @@
         <tr ondblclick="handleUpdateProduct('<%= entry.id %>')">
           <td><%= entry.id %></td>
           <td><%= entry.name %></td>
-          <td><%= entry.type %></td>
+          <td><%= entry.content %></td>
+          <td>
+            <img
+              src="<%= entry.img %>"
+              alt="Product Image"
+              style="max-width: 100px; max-height: 100px"
+            />
+          </td>
+          <td><%= entry.price %></td>
+          <td><%= entry.rating %></td>
           <td>
             <input
               class="btn btn-primary"

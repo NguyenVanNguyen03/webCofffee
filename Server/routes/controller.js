@@ -3,6 +3,37 @@ import Product from "../db/models/product.js";
 
 const router = express.Router();
 
+router.get("/api/products", async (req, res) => {
+  try {
+    const products = await Product.find({});
+    res.json(products);
+  } catch (err) {
+    console.log("Error: ", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+/**
+ * API endpoint: Add new Product
+ */
+router.post("/api/products", async (req, res) => {
+  try {
+    const newProduct = new Product({
+      name: req.body.productName,
+      content: req.body.productContent,
+      img: req.body.productImg,
+      price: req.body.productPrice,
+      rating: req.body.productRating,
+    });
+
+    await newProduct.save();
+    res.json({ message: "Product added successfully" });
+  } catch (err) {
+    console.log("Error: ", err);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 /**
  * Home page: loading all products
  */
@@ -30,7 +61,10 @@ router.post("/", async (req, res) => {
   try {
     const newProduct = new Product({
       name: req.body.productName,
-      type: req.body.productType,
+      content: req.body.productContent,
+      img: req.body.productImg,
+      price: req.body.productPrice,
+      rating: req.body.productRating,
     });
 
     await newProduct.save();
@@ -76,7 +110,15 @@ router.post("/:productId", async (req, res) => {
     const productId = req.params.productId;
     await Product.findByIdAndUpdate(
       productId,
-      { $set: { name: req.body.productName, type: req.body.productType } },
+      {
+        $set: {
+          name: req.body.productName,
+          content: req.body.productContent,
+          img: req.body.productImg,
+          price: req.body.productPrice,
+          rating: req.body.productRating,
+        },
+      },
       { useFindAndModify: false }
     );
     res.redirect("/");

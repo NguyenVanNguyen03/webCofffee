@@ -2,6 +2,10 @@ import "./HomePage.scss";
 import cofe1 from "../../assets/images/cofe1.png";
 import { FaShoppingCart } from "react-icons/fa";
 import CoffeeCard from "../../components/Card/card";
+import AboutPage from "../About/AboutPage";
+import OptionServicePage from "../Service/option_servicePage";
+import ProductPage from "../Product/ProductPage";
+import SlideAboutPage from "../SlideAbout/SlideAbout";
 
 function HomePage() {
   return (
@@ -33,6 +37,11 @@ function HomePage() {
           </div>
         </div>
       </div>
+
+      <AboutPage />
+      <OptionServicePage />
+      <ProductPage />
+      <SlideAboutPage />
     </div>
   );
 }
