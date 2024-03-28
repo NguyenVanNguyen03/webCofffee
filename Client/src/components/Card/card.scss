@@ -77,13 +77,13 @@
   color: #ffb546;
   padding: 5px 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .button-group button.hot-button:hover,
 .button-group button.cold-button:hover {
-  border-color: #ff7b00;
-  background-color: #fee7c5;
-  color: #ff7b00;
+  background-color: #ff8000;
+  color: #fff;
 }
 
 .cart-button {

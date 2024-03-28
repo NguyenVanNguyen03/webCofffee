@@ -38,11 +38,14 @@
     background-color: #2f2105;
     color: white;
     border: none;
-    border-radius: 25px; // Making buttons rounded
+    border-radius: 25px;
     cursor: pointer;
     display: inline;
     align-items: center;
-
+    &:hover {
+      background-color: #534831;
+      transition: background-color 0.3s ease;
+    }
     &:last-child {
       margin-right: 0;
     }
@@ -53,6 +56,13 @@
     color: orange;
     margin-left: 40px;
     cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: #ff8000;
+      color: #fff;
+    }
   }
   .icon-cart {
     background-color: orange;

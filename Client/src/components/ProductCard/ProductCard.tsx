@@ -11,26 +11,32 @@ interface Product {
   content: string;
   price: number;
 }
+
 const ProductCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
+  const [visibleProductCount, setVisibleProductCount] = useState<number>(6);
 
   useEffect(() => {
     axios
       .get("http://localhost:3000/api/products")
-
-      .then((products) => {
-        setProducts(products.data);
-        console.log(products);
+      .then((response) => {
+        setProducts(response.data);
+        setDisplayedProducts(response.data.slice(0, visibleProductCount));
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [visibleProductCount]);
+
+  const handleShowMore = () => {
+    setVisibleProductCount(visibleProductCount + 6);
+  };
 
   return (
     <div className="cardsProduct-container">
-      {products.map((product) => (
+      {displayedProducts.map((product) => (
         <div className="card" key={product._id}>
           <div className="card-header">
-            <img src={product.img} alt="Coffee" className="coffee-image" />
+            <img src={product.img} alt="ảnh coffee" className="coffee-image" />
             <div className="rating">
               <span className="rating-value">{product.rating}</span>
               <FaStar className="star" />
@@ -52,6 +58,11 @@ const ProductCard = () => {
           </div>
         </div>
       ))}
+      {products.length > displayedProducts.length && (
+        <button className="more-button" onClick={handleShowMore}>
+          More
+        </button>
+      )}
     </div>
   );
 };

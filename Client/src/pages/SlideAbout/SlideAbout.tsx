@@ -1,3 +1,4 @@
+import OptionService from "../../components/option_service/option_service";
 import "./SlideAbout.scss";
 
 export default function SlideAboutPage() {
@@ -12,7 +13,9 @@ export default function SlideAboutPage() {
           </p>
         </div>
       </div>
-      <div className="slide"></div>
+      <div className="slide">
+        <OptionService />
+      </div>
     </div>
   );
 }
