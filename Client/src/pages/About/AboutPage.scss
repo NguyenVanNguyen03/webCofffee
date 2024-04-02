@@ -6,6 +6,7 @@
   justify-content: center; /* Căn giữa theo chiều ngang */
   padding-top: var(--header-height);
   height: 100vh;
+  animation: fadeInY ease-in-out 1s;
   .img-about {
     width: 50%;
     display: flex;
@@ -42,5 +43,18 @@
         transition: background-color 0.3s ease;
       }
     }
+  }
+}
+
+@keyframes fadeInY {
+  0% {
+    opacity: 0;
+    width: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+    transform: translateY(0);
   }
 }

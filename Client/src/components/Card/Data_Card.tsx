@@ -4,25 +4,25 @@ import cofe4 from "../../assets/images/cofe4.png";
 
 const Data_Card = [
   {
-    id: 1,
-    ImageProduct: cofe2,
-    NameProduct: "Coffee A",
-    Price: "21",
-    Rating: "4",
+    _id: 1,
+    img: cofe2,
+    name: "Coffee A",
+    price: 21,
+    rating: "4",
   },
   {
-    id: 2,
-    ImageProduct: cofe3,
-    NameProduct: "Coffee B",
-    Price: "22",
-    Rating: "4.5",
+    _id: 2,
+    img: cofe3,
+    name: "Coffee B",
+    price: 22,
+    rating: "4.5",
   },
   {
-    id: 3,
-    ImageProduct: cofe4,
-    NameProduct: "Coffee C",
-    Price: "23",
-    Rating: "5",
+    _id: 3,
+    img: cofe4,
+    name: "Coffee C",
+    price: 23,
+    rating: "5",
   },
 ];
 

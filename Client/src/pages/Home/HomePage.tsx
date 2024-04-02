@@ -37,7 +37,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       <AboutPage />
       <OptionServicePage />
       <ProductPage />

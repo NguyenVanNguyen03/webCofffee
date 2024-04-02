@@ -1,1 +1,101 @@
- 
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    /* Đảm bảo container chiếm toàn bộ chiều cao của màn hình */
+
+    .col {
+        width: 60%;
+        /* Đảm bảo nội dung trong container không quá rộng */
+        background-color: #f8f9fa;
+        /* Màu nền */
+        padding: 20px;
+        /* Khoảng cách giữa nội dung và viền container */
+        border-radius: 8px;
+        /* Bo tròn viền container */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* Đổ bóng */
+        margin: 0 auto;
+
+        h3 {
+            text-align: center;
+
+            /* Căn giữa tiêu đề */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            th,
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #dee2e6;
+                /* Viền dưới cho hàng */
+                vertical-align: middle;
+                /* Căn giữa nội dung trong hàng */
+            }
+
+            th:first-child,
+            td:first-child {
+                width: 10%;
+                /* Độ rộng cố định cho cột hình ảnh */
+            }
+
+            img {
+                max-width: 100%;
+
+                object-fit: cover;
+                /* Hình ảnh trong bảng không vượt quá kích thước cột */
+                height: auto;
+                /* Đảm bảo tỷ lệ hình ảnh không bị biến dạng */
+            }
+
+            .btn {
+                padding: 2px 6px;
+                font-size: 14px;
+                cursor: pointer;
+                margin: 0 5px;
+            }
+
+            .delete {
+                background-color: red;
+                border: none;
+                color: #dee2e6;
+                padding: 5px 10px;
+
+                &:hover {
+                    background-color: rgb(247, 120, 120);
+                }
+            }
+
+        }
+
+        .text-end {
+            text-align: end;
+            /* Căn phải cho phần tổng cộng */
+        }
+
+        .mt-5 {
+            margin-top: 50px;
+            /* Khoảng cách từ nút đến phần dưới */
+
+            .btn {
+                margin-right: 10px;
+                padding: 5px 10px;
+                border: none;
+                text-decoration: none;
+                background-color: rgb(40, 40, 204);
+                border-radius: 5px;
+                color: #f8f9fa;
+                font-size: 16px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(113, 113, 255);
+                }
+            }
+        }
+    }
+}

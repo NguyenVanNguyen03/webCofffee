@@ -6,6 +6,7 @@ import { Footer, Header } from "../layouts";
 import screenUrl from "../contants/screenUrls";
 import AboutPage from "../pages/About/AboutPage";
 import OptionServicePage from "../pages/Service/option_servicePage";
+import Cart from "../components/Cart/Cart";
 
 interface PageWrapperProps {
   title: string;
@@ -43,6 +44,13 @@ const publicRouters = [
     isHeader: true,
     isFooter: true,
   },
+  {
+    path: screenUrl.CART,
+    component: Cart,
+    title: "Cart Page",
+    isHeader: false,
+    isFooter: false,
+  },
 ];
 
 function WrapperComponent({
@@ -54,6 +62,8 @@ function WrapperComponent({
   useEffect(() => {
     document.title = title;
   }, [title]);
+
+  // Pass all props to the Component
   return (
     <div>
       {isHeader && <Header />}
@@ -71,24 +81,20 @@ function AppRouter() {
   return (
     <Router>
       <Routes>
-        {publicRouters.map((route, index) => {
-          console.log(route);
-          return (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <WrapperComponent
-                  title={route.title}
-                  component={route.component}
-                  isHeader={route.isHeader}
-                  isFooter={route.isFooter}
-                />
-              }
-            />
-          );
-        })}
-
+        {publicRouters.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={(
+              <WrapperComponent
+                title={route.title}
+                component={route.component}
+                isHeader={route.isHeader}
+                isFooter={route.isFooter}
+              />
+            )}
+          />
+        ))}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

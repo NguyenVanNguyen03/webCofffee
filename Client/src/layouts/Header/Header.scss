@@ -8,10 +8,12 @@
   border-bottom: 1px solid black;
   height: var(--header-height);
   background: url(../../assets/images/bgr_cf_aboutt.png);
-  z-index: 9999;
+  z-index: 999;
+
   .coffee-logo {
     cursor: pointer;
   }
+
   ul {
     flex: 1;
     list-style: none;
@@ -54,10 +56,30 @@
     border-radius: 50px;
     border: none;
   }
-  // .bt-card {
-  //   cursor: pointer;
-  // }
-  svg {
-    cursor: pointer;
+
+  .body-cart {
+    position: relative;
+    display: inline-block;
+
+    .btn-cart {
+      svg {
+        cursor: pointer;
+      }
+    }
+
+
+    .Qty-Product {
+      position: absolute;
+      top: -8px; // Điều chỉnh top để đưa số lượng lên trên
+      right: -8px; // Điều chỉnh right để đưa số lượng sang phải
+      background-color: red; // Đặt màu đỏ cho hình tròn
+      color: white; // Đặt màu chữ trắng
+      border-radius: 50%; // Đặt hình tròn
+      width: 18px;
+      height: 18px;
+      font-size: 14px; // Đặt kích thước chữ
+      text-align: center;
+    }
   }
+
 }

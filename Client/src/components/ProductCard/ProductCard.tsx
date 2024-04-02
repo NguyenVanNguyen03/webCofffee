@@ -3,8 +3,11 @@ import "./ProductCard.scss";
 import { FaShoppingCart, FaStar } from "react-icons/fa";
 import axios from "axios";
 
-interface Product {
-  _id: string;
+import { formatCurrency } from "../../utils/common";
+import { useShoppingContext } from "../../contexts/ShoppingContext";
+
+type Product = {
+  _id: number;
   img: string;
   rating: number;
   name: string;
@@ -16,15 +19,20 @@ const ProductCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [displayedProducts, setDisplayedProducts] = useState<Product[]>([]);
   const [visibleProductCount, setVisibleProductCount] = useState<number>(6);
+  const { addCartItem } = useShoppingContext()
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/api/products")
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/products");
         setProducts(response.data);
         setDisplayedProducts(response.data.slice(0, visibleProductCount));
-      })
-      .catch((error) => console.log(error));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
   }, [visibleProductCount]);
 
   const handleShowMore = () => {
@@ -33,24 +41,24 @@ const ProductCard = () => {
 
   return (
     <div className="cardsProduct-container">
-      {displayedProducts.map((product) => (
-        <div className="card" key={product._id}>
+      {displayedProducts.map((item) => (
+        <div className="card" key={item._id}>
           <div className="card-header">
-            <img src={product.img} alt="ảnh coffee" className="coffee-image" />
+            <img src={item.img} alt="ảnh coffee" className="coffee-image" />
             <div className="rating">
-              <span className="rating-value">{product.rating}</span>
+              <span className="rating-value">{item.rating}</span>
               <FaStar className="star" />
             </div>
           </div>
           <div className="card-body">
             <div className="coffee-info">
-              <h3 className="coffee-name">{product.name}</h3>
-              <p className="coffee-price">{product.price}K</p>
+              <h3 className="coffee-name">{item.name}</h3>
+              <p className="coffee-price">{formatCurrency(item.price)}</p>
             </div>
             <div className="content-and-button">
-              <p>{product.content}</p>
+              <p>{item.content}</p>
               <div className="button-group-product">
-                <button className="cart-button">
+                <button className="cart-button" onClick={() => addCartItem(item)} >
                   <FaShoppingCart />
                 </button>
               </div>

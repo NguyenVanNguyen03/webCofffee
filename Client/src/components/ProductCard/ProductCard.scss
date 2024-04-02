@@ -8,8 +8,8 @@
   background-color: #fff;
   border-radius: 5px;
   overflow: hidden;
-  width: calc(33.33% - 150px); /* Xác định kích thước của mỗi card */
-  margin: 0 30px 20px 30px; /* Thay đổi margin bottom để tạo khoảng cách giữa các dòng */
+  width: calc(33.33% - 150px);
+  margin: 0 30px 20px 30px;
   padding: 20px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -38,7 +38,8 @@
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(255, 218, 218, 0.1); /* Thêm hiệu ứng bóng */
+  box-shadow: 0 4px 8px rgba(255, 218, 218, 0.1);
+  /* Thêm hiệu ứng bóng */
 }
 
 .star {
@@ -71,12 +72,14 @@
 .content-and-button {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Để nội dung và nút cart căn trên cùng */
+  align-items: flex-start;
+  /* Để nội dung và nút cart căn trên cùng */
 }
 
 .button-group-product {
   display: flex;
-  align-items: center; /* Để nút cart căn giữa theo chiều dọc */
+  align-items: center;
+  /* Để nút cart căn giữa theo chiều dọc */
 }
 
 .button-group-product button {
@@ -107,7 +110,8 @@
 .more-button {
   display: block;
   width: 20%;
-  margin: 20px auto; /* Đặt nút ở giữa */
+  margin: 20px auto;
+  /* Đặt nút ở giữa */
   padding: 10px 0;
   background-color: #ff8000;
   color: #fff;
@@ -115,6 +119,7 @@
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+
   &:hover {
     background-color: #ffb546;
   }
