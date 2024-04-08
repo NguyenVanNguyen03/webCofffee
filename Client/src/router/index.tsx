@@ -7,6 +7,7 @@ import screenUrl from "../contants/screenUrls";
 import AboutPage from "../pages/About/AboutPage";
 import OptionServicePage from "../pages/Service/option_servicePage";
 import Cart from "../components/Cart/Cart";
+import Register from "../layouts/Auth/Register/Register";
 
 interface PageWrapperProps {
   title: string;
@@ -16,6 +17,13 @@ interface PageWrapperProps {
 }
 
 const publicRouters = [
+  {
+    path: screenUrl.RESGISTER,
+    component: Register,
+    title: "Register Page",
+    isHeader: false,
+    isFooter: false,
+  },
   {
     path: screenUrl.HOME,
     component: HomePage,

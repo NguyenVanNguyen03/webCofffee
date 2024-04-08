@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom'
-
 import { formatCurrency } from '../../utils/common'
 import "./Cart.scss"
 import { useShoppingContext } from '../../contexts/ShoppingContext'
@@ -18,7 +17,7 @@ const Cart = () => {
                         <thead>
                             <tr>
                                 <th >
-                                    images
+                                    Images
                                 </th>
                                 <th >Name Product</th>
                                 <th >Quanlity</th>
@@ -52,11 +51,11 @@ const Cart = () => {
                     </table>
                     <div className='text-end'><strong>Total: {formatCurrency(totalPrice)}</strong></div>
                     <div className='mt-5'>
-                        <Link to='/products' className='btn btn-sm btn-primary me-2'>Continue order</Link>
+                        <Link to='/products' className='btn btn-sm btn-primary me-2'>Add orther</Link>
                         <button className='btn btn-sm btn-success' onClick={() => {
                             clearCart()
                             navigate('/products')
-                        }}>Place Order</button>
+                        }}>Pay</button>
                     </div>
                 </div>
             </div>

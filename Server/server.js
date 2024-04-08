@@ -9,7 +9,8 @@ const app = express();
 app.use(cors());
 
 // Sử dụng bodyParser để xử lý dữ liệu từ phần thân yêu cầu HTTP
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Kết nối tới cơ sở dữ liệu MongoDB
 connectDB();

@@ -3,25 +3,20 @@
     justify-content: center;
     text-align: center;
     height: 100vh;
-    /* Đảm bảo container chiếm toàn bộ chiều cao của màn hình */
+
 
     .col {
-        width: 60%;
-        /* Đảm bảo nội dung trong container không quá rộng */
+        width: 100%;
         background-color: #f8f9fa;
-        /* Màu nền */
         padding: 20px;
-        /* Khoảng cách giữa nội dung và viền container */
         border-radius: 8px;
-        /* Bo tròn viền container */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        /* Đổ bóng */
         margin: 0 auto;
 
         h3 {
             text-align: center;
 
-            /* Căn giữa tiêu đề */
+
         }
 
         table {
@@ -30,11 +25,11 @@
 
             th,
             td {
-                padding: 10px;
+                padding: 20px;
                 border-bottom: 1px solid #dee2e6;
-                /* Viền dưới cho hàng */
+
                 vertical-align: middle;
-                /* Căn giữa nội dung trong hàng */
+
             }
 
             th:first-child,
@@ -44,12 +39,10 @@
             }
 
             img {
-                max-width: 100%;
-
                 object-fit: cover;
-                /* Hình ảnh trong bảng không vượt quá kích thước cột */
-                height: auto;
-                /* Đảm bảo tỷ lệ hình ảnh không bị biến dạng */
+                width: 120px;
+                height: 100px;
+
             }
 
             .btn {
@@ -74,12 +67,12 @@
 
         .text-end {
             text-align: end;
-            /* Căn phải cho phần tổng cộng */
+
         }
 
         .mt-5 {
             margin-top: 50px;
-            /* Khoảng cách từ nút đến phần dưới */
+
 
             .btn {
                 margin-right: 10px;

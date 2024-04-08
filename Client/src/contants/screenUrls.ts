@@ -1,4 +1,5 @@
 const screenUrl = {
+  RESGISTER: "/register",
   HOME: "/",
   PRODUCTS: "/products",
   ABOUT: "/about",
